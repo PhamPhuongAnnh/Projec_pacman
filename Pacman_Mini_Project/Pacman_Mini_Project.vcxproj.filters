@@ -19,8 +19,11 @@
     <Filter Include="sound">
       <UniqueIdentifier>{a66d294b-9b69-4b99-b8da-13b0e8e86415}</UniqueIdentifier>
     </Filter>
-    <Filter Include="texture">
-      <UniqueIdentifier>{711fbd20-d89f-408d-8a55-213602f9d9d8}</UniqueIdentifier>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{2ff0dd5d-8f74-447a-b0ea-0e2d5f2c9eb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Images">
+      <UniqueIdentifier>{413f85ec-5767-4579-8312-be371b66f62b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,36 +73,66 @@
     </Media>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\Downloads\PacShow\PacShow\texture\PMSprites.png">
-      <Filter>texture</Filter>
-    </Image>
-    <Image Include="..\..\..\Downloads\PacShow\PacShow\texture\map1.png">
-      <Filter>texture</Filter>
-    </Image>
-    <Image Include="..\..\..\Downloads\PacShow\PacShow\texture\map2.png">
-      <Filter>texture</Filter>
-    </Image>
-    <Image Include="..\..\..\Downloads\PacShow\PacShow\texture\map3.png">
-      <Filter>texture</Filter>
-    </Image>
-    <Image Include="..\..\..\Downloads\PacShow\PacShow\texture\mapB.png">
-      <Filter>texture</Filter>
-    </Image>
-    <Image Include="..\..\..\Downloads\PacShow\PacShow\texture\pacman.ico">
-      <Filter>texture</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Map.h">
+    <ClInclude Include="..\..\proj\Pacman\Source\Headers\Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\proj\Pacman\Source\Headers\ConvertSketch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\proj\Pacman\Source\Headers\DrawMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\proj\Pacman\Source\Headers\Ghost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\proj\Pacman\Source\Headers\GhostManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\proj\Pacman\Source\Headers\MapCollision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\proj\Pacman\Source\Headers\Pacman.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="..\..\proj\Pacman\Source\Pacman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
+    <ClCompile Include="..\..\proj\Pacman\Source\ConvertSketch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\proj\Pacman\Source\DrawMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\proj\Pacman\Source\Ghost.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\proj\Pacman\Source\GhostManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\proj\Pacman\Source\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\proj\Pacman\Source\MapCollision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\proj\Pacman\Source\Resources\Images\Pacman16.png">
+      <Filter>Resources\Images</Filter>
+    </Image>
+    <Image Include="..\..\proj\Pacman\Source\Resources\Images\PacmanDeath16.png">
+      <Filter>Resources\Images</Filter>
+    </Image>
+    <Image Include="..\..\proj\Pacman\Source\Resources\Images\Font.png">
+      <Filter>Resources\Images</Filter>
+    </Image>
+    <Image Include="..\..\proj\Pacman\Source\Resources\Images\Ghost16.png">
+      <Filter>Resources\Images</Filter>
+    </Image>
+    <Image Include="..\..\proj\Pacman\Source\Resources\Images\Map16.png">
+      <Filter>Resources\Images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

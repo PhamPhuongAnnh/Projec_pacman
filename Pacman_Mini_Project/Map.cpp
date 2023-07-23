@@ -40,6 +40,85 @@ string Map::_mapString[25] = {
 	"#E        A A        R#",  // 23
 	"#######################" // 24
 };
+bool Map::IsDot(String str){
+	return str != "0" && str != "=" &&
+		str != "B" && str != "P" &&
+		str != "I" && str != "C" &&
+		str != "G" && str != "*" &&
+		str != "1" && str != "-" && str!="c";
 
+} // kiểm tra xem có phải là . không
+RectangleShape Map::GetWallShape(int row, int col){
+	RectangleShape rectangle;
+	rectangle.setSize(sf::Vector2f(26, 26));// 30 28
+	rectangle.setFillColor(Color::Blue);
+	rectangle.setOutlineColor(sf::Color::Black);
+	rectangle.setOutlineThickness(.5);
+	rectangle.setPosition(col*30, row*30);
+	return rectangle;
+} // vẽ tường
+CircleShape Map::GetDot(int row, int col, string str){
+	float radius = 3;
+	int offset = 12;
+	Color color = Color::Yellow;
+	if (str == "@")
+	{
+		radius = 10;
+		offset = 6;
+	}
+	CircleShape _dot;
+	_dot.setRadius(radius);
+	_dot.setFillColor(color);
+	_dot.setPosition(col * 30 + offset, row * 30 + offset);
+	return _dot;
+}// lấy điểm
 
-	
+void Map::InitMap(){
+	int colum = 0;
+	int row = 0;
+	for (int i = 0; i < (_mapW*_mapH) ; i++)
+	{
+		if (colum >= _mapW)
+		{
+			colum = 0;
+			row++;
+			// cout << mazePattern[row] << endl;
+		}
+		string str = _mapString[row].substr(colum, 1);
+		_mapGrid[row][colum] = str;
+		if (str == "#")
+		{
+			// wallShapeArr[wallShapeCount] = getWallShape(colum,row);
+			_wallShapeCount++;
+		}
+		else
+		{
+			if (IsDot(str) )
+			{
+				_dotArr[_dotCount] = GetDot(row,colum,str);
+				_dotCount++;
+			}
+		}
+		colum++;
+	}
+}	// khởi tạo ma trận
+void Map::DrawWall(RenderWindow *window){
+	int i = 0;
+	for ( i = 0; i < _wallShapeCount; i++)
+	{
+		// window->draw (wallShapeArr[i]);
+		if (i < _dotCount)
+		{
+			window->draw(_dotArr[i]);
+		}
+	}
+}// vẽ tường 
+void Map::ReDrawDot(){
+	for (int i = 0; i < _dotCount; i++)
+	{
+		CircleShape dot = _dotArr[i];
+		dot.setFillColor(Color::Yellow);
+		_dotArr[i] = dot;
+	}
+} // vẽ điểm tròn
+
